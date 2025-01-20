@@ -16,6 +16,8 @@ chatbot_env/
 
 .vscode/
 
+trial.ipynb
+
 # Distribution / packaging
 .Python
 build/
