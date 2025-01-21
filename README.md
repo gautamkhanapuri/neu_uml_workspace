@@ -23,14 +23,14 @@ The repository is organized as follows:
 
 ```
 ├── hw1/         # Assignment 1 files
-├── hw2/         # Assignment 2 files
-├── hw3/         # Assignment 3 files
-├── hw4/         # Assignment 4 files
-├── hw5/         # Assignment 5 files
-├── hw6/         # Assignment 6 files
-├── hw7/         # Assignment 7 files
-├── hw8/         # Assignment 8 files
-├── hw9/         # Assignment 9 files
+├── hw2A/         # Assignment 2 files
+├── hw2B/         # Assignment 3 files
+├── hw3A/         # Assignment 4 files
+├── hw3B/         # Assignment 5 files
+├── hw4/         # Assignment 6 files
+├── hw5A/         # Assignment 7 files
+├── hw5B/         # Assignment 8 files
+├── hw6/         # Assignment 9 files
 ├── README.md           # This Readme file
 └── Resources/          # Additional resources or references
 ```
