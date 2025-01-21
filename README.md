@@ -42,8 +42,8 @@ The repository is organized as follows:
 | Homework | Release Date  | Submission Deadline | Status                                                                 |
 |----------|---------------|---------------------|------------------------------------------------------------------------|
 | HW 1     | 2025-01-07    | 2025-01-20          | <span style="color: white; background-color: green;">Submitted and Demoed</span>|
-| HW 2     | 2025-01-21    | YYYY-MM-DD          | <span style="color: white; background-color: black;">Not Yet Released</span>       |
-| HW 3     | YYYY-MM-DD    | YYYY-MM-DD          | <span style="color: white; background-color: black;">Not Yet Released</span>       |
+| HW 2     | 2025-01-21    | 2025-02-03          | <span style="color: white; background-color: orange;">In Progress</span>       |
+| HW 3     | 2025-01-28    | 2025-02-14          | <span style="color: white; background-color: black;">Not Yet Released</span>       |
 | HW 4     | YYYY-MM-DD    | YYYY-MM-DD          | <span style="color: white; background-color: black;">Not Yet Released</span>       |
 | HW 5     | YYYY-MM-DD    | YYYY-MM-DD          | <span style="color: white; background-color: black;">Not Yet Released</span>       |
 | HW 6     | YYYY-MM-DD    | YYYY-MM-DD          | <span style="color: white; background-color: black;">Not Yet Released</span>       |
