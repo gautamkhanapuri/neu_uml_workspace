@@ -13,6 +13,7 @@ __pycache__/
 zip_datasets/
 chatbot_env/
 20news-bydate/
+**/datasets/
 
 .vscode/
 
