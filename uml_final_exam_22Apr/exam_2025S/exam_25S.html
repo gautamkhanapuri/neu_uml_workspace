@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FINAL EXAM</title>
+    <meta name="CREATED" content="20050506;19503200">
+    <meta name="CHANGED" content="20060531;23041200">
+  </head>
+  <body>
+    <h1><font face="Luxi Sans">DS5230 Final Exam Spring 2025</font></h1> <h3>April 22nd 2025</h3>
+    
+      </font></h1>
+    <!-- <p>Make sure you check the <a href="../../html/schedulen.html"><font
+          face="Luxi Sans">syllabus</font></a> for the due date. Please
+      use the notations adopted in class, even if the problem is stated
+      in the book using a different notation.</p>
+    <p>We are not looking for very long answers (if you find yourself
+      writing more than one or two pages of typed text per problem, you
+      are probably on the wrong track). Try to be concise; also keep in
+      mind that good ideas and explanations matter more than exact
+      details.</p>
+    <p>Submit all code files Dropbox (create folder HW1 or similar
+      name). Results can be pdf or txt files, including plots/tabels if
+      any.<br>
+    </p>
+    <p>"Paper" exercises: submit using Dropbox as pdf, either typed or
+      scanned handwritten.<br>
+    </p> -->
+    <hr>
+    <!-- <h3 style="font-weight: normal;">DATASET 1<span style="font-weight:
+        bold;">:</span><small> Housing data, (training, testing, description). The last
+        column are the labels</small>. <br>
+    </h3> -->
+    <!-- <p>DATATSET 2<span style="font-weight: bold;">: Spambase : spam emails</p> -->
+    <!-- <p>DATATSET <span style="font-weight: bold;">: <a href=https://archive.ics.uci.edu/ml/datasets/spambase> SpamBase</a>: emails (54-feature vectors) classified as spam/nospam</p>
+    <p>DATATSET <span style="font-weight: bold;">: 20 NewsGroups : news articles </p>
+    <p>DATATSET <span style="font-weight: bold;">: MNIST : 28x28 digit B/W images </p>
+    <p>DATATSET <span style="font-weight: bold;">: FASHION : 28x28 B/W  images </p>
+	    https://en.wikipedia.org/wiki/MNIST_database <br>
+	    http://yann.lecun.com/exdb/mnist/ <br>
+	    https://www.kaggle.com/zalando-research/fashionmnist <br>
+
+   -->  
+     For each problem submit to Gradescope your code. At the top of the file add in comment/instructions bullets: the ideas you had, why they make sense, why they worked or not, the results, and implementation details such as setting parameters etc. We must be able to run your code from these instructions.
+   
+   	
+<!--   	<br><br>-->
+<!--   	Exam time: 7 hours once you start. Please make sure you have all files in Dropbox before your time expires (do not make changes after that). -->
+<!--   	<br><br>-->
+<!--	piazza: piazza.com/northeastern/spring2021/cs6220final-->
+<!--	<br>-->
+<!--	piazza code: 1AB2CFIN-->
+	
+   <br><br>    <br><br> 
+   
+   
+    
+    
+    <!-- <h3>PROBLEM 1 </h3>
+    <p>Using each dataset, parse it into a feature matrix, and normalize the features</p> -->
+    
+    <h3>PROBLEM 1 [100 points] Clustering noisy images</h3>
+    <!-- <math display="block">\text{geometric series:}\quad \sum_{i=0}^\infty 2^{-i}=2 </math> -->
+	<p>DATATSET <a href=pb1data_XW_8358.txt>  8358 sampled images</a> with not-uniform label distribution. Each row is an image: first column is the label (digit), then the other 784 columns are pixel values. These images have noise in them; to achieve a better result, you need to work on the features first.
+ 
+	<br><br>
+	
+	<span style="font-weight:bold"></span> 
+	Task: Run a clustering algorithm on the given data set, extract k=10 clusters, and report entropy statistics using the given evaluation function (or write your own). You will have to decide the data preprocessing (if any) and the clustering algorithm. You can use scientific computing libraries (e.g. NumPy / SciPy) for both processing (for example PCA) and clustering (for example KMeans), and you can use any functions you developed in your previous homeworks. 
+	
+	 <br><br>
+	
+	Labels are not to be used during the algorithm/clustering/preprocessing, but only for evaluation: print a confusion matrix of counts, calculate entropy on each row and column, and compute weighted_by_count average entropy for rows (labels) and columns (clusters). 
+Make sure to include all datapoints into the K=10 clusters.	
+<br><br>
+
+Matthew wrote this <a href="evaluate.py"> evaluation function</a> that computes the Conf matrix and the entropies. This below is a reasonable good result. The lower the entropies, the better. <br>
+	
+	Label_Counts_entropies =
+	
+	<table>
+
+	<tr>      <td>    672   <td>   0.18713
+	<tr>      <td>   1580   <td>   0.14998
+	<tr>      <td>    490   <td>   0.87831
+	<tr>      <td>   1018  <td>   0.66072
+	<tr>      <td>    961   <td>    1.2411
+	<tr>      <td>   1213   <td>   0.67405
+	<tr>      <td>   728   <td>     0.225
+	<tr>      <td>    515  <td>     0.5634
+	<tr>      <td>    495  <td>     1.4053
+	<tr>      <td>    686  <td>    0.62479
+</table>
+<br><br>
+
+	Cluster_Counts_entropies =
+	<table>
+
+	  <tr>   <td>     688      <td>   1186      <td>    757     <td>    1623      <td>    467    <td>      535   <td>       425    <td>     1022     <td>    1219    <td>      436
+	  <tr>   <td> 0.37984     <td>  0.50859     <td>  0.47732   <td>   0.36675    <td>  0.61138   <td>   0.76515  <td>    0.82763   <td>   0.59264   <td>    1.3855  <td>    0.50421
+	</table>
+
+<br><br>
+	avg_weighted_entropy_rows_cols =
+
+	      0.60471      0.64395
+
+<br><br>
+	ConfMatrix (rows=labels; cols=clusters)
+	<table>
+
+	 <tr>    <td>      657     <td>       9     <td>       4    <td>        0    <td>        0     <td>       0     <td>       0     <td>       1    <td>        0     <td>       1
+	  <tr>   <td>        0    <td>        1    <td>        2    <td>     1556    <td>        7    <td>        1     <td>       2    <td>        3    <td>        8     <td>       0
+	 <tr>     <td>       7     <td>       2    <td>        2    <td>       12    <td>      429    <td>       12    <td>        8    <td>        3    <td>        0     <td>      15
+	 <tr>     <td>       2    <td>       30     <td>       2    <td>        7    <td>       11    <td>        9    <td>       18    <td>      928    <td>       11     <td>       0
+	 <tr>    <td>        1    <td>        1    <td>        9    <td>       13    <td>        2    <td>        3    <td>        3    <td>        0   <td>       523     <td>     406
+	 <tr>    <td>        9    <td>     1105    <td>       27    <td>        3    <td>        8    <td>        1    <td>       18    <td>       25   <td>        15     <td>       2
+	 <tr>    <td>        7    <td>        7    <td>      708    <td>        6    <td>        0   <td>         0    <td>        0    <td>        0   <td>         0     <td>       0
+	 <tr>    <td>        1    <td>        0    <td>        0    <td>       11    <td>        3   <td>       471    <td>        0    <td>        0   <td>        25     <td>       4
+	 <tr>    <td>        1     <td>      28    <td>        3    <td>       10    <td>        6   <td>         4    <td>      371    <td>       55   <td>        12     <td>       5
+	 <tr>    <td>        3    <td>        3   <td>         0    <td>        5    <td>        1    <td>       34    <td>        5    <td>        7   <td>       625     <td>       3
+	</table>
+	
+<!--	<br><br>-->
+	
+<!--	<span style="font-weight:bold">Part B.</span> Same task, but you can reveal and use for trianing up to 500 image labels in the validation set. You can use any algorithm to improve the two purity scores.  You dont have to use all 500 labels at once (for example one might reveal 100 labels, run an algorithm, reveal another 100 labels, run again, etc.)-->
+		
+<!-- ============================================================================================   	
+	============================================================================================ 
+-->
+<br><br><br><br>
+
+
+  <h3>PROBLEM 2 [100 points] 
+
+<br>     </h3>
+
+An auction house decides each morning, randomly based on internal rules, what class of products will be auctioned: Cars, Jewelry, Paintings, or Houses. <br>
+Each class has it own bidders who are called to place bids on matching days, characterized by a bidding_rate parameter λ, and assumed that bidding intervals overall follows <a href ="https://en.wikipedia.org/wiki/Exponential_distribution"> negative exponential distribution </a>.  That is, probability for a bid to not occur decreases exponentially with length of time. For each day we record the number of bids, which theory dictates must follow E[#bids] = λ, E[bidding_interval] = 1 / λ
+
+<br><br>  
+
+<span style="font-weight:bold">Part A (25 points)</span>. Given that exponential distribution assumption on bidding intervals, figure out the proper distribution for the #bids/day, parametrized by λ. You can use online resources to do so. 
+
+<br><br>
+
+<span style="font-weight:bold">Part B (75 points)</span> 
+The file contains <a href = "pb2data_D.txt"> counts of auction bids </a> for 10000 days, without specifying which class was auctioned per day.  Estimate the rate_bidding parameter for each class (4 λ values) and also estimate how many days each class was auctioned (4 counts out of 10000).<br>
+ Hint: use EM on a mixture of 4 distributions found in part A. You can use libraries for distribution computation (pdf), but the EM steps have to be your own implementation. Here is a possible result
+<br>
+Estimated λ-s: [ 6.13 15.22  1.97 22.34]
+<br>
+Estimated #days  : [3087 1272 1953 3687 ]
+
+
+<br><br>
+
+<!-- ============================================================================================   	============================================================================================ 
+-->
+
+<!-- ============================================================================================   	============================================================================================ 
+-->
+
+	
+    
+    
+  </body>
+</html>
